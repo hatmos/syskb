@@ -1,0 +1,12 @@
+'Déclaration des variables
+Dim Date_Maintenant, Heure_Maintenant, FSCopie
+
+'Formatage de la date et de l'heure
+Date_Maintenant = date
+Date_Maintenant = day(Date_Maintenant) & month(Date_Maintenant) & year(Date_Maintenant)
+Heure_Maintenant = time
+Heure_Maintenant = Hour(Heure_Maintenant) & Minute(Heure_Maintenant) & Second(Heure_Maintenant)
+
+'Copie du fichier
+Set FSCopie = CreateObject("Scripting.FileSystemObject")
+FSCopie.CopyFile "\\serveur\partage\file.dmp" , "\\serveur\partage\archives\file_" & Date_Maintenant & Heure_Maintenant & ".dmp"
